@@ -1,0 +1,23 @@
+2024-08-01 16:27:12,026 - __main__ - INFO - Starting server...
+2024-08-01 16:27:12,448 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:28:16,895 - src.modules.application - INFO - Authorization access to new domain: swiftaitechnical.amocrm.ru
+2024-08-01 16:48:33,429 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:48:34,905 - __main__ - INFO - Starting server...
+2024-08-01 16:48:35,324 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:54:19,363 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:54:20,771 - __main__ - INFO - Starting server...
+2024-08-01 16:54:21,191 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:56:17,564 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:56:18,939 - __main__ - INFO - Starting server...
+2024-08-01 16:56:19,350 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:57:27,531 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:57:28,953 - __main__ - INFO - Starting server...
+2024-08-01 16:57:29,363 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:59:05,193 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:59:06,438 - __main__ - INFO - Starting server...
+2024-08-01 16:59:06,839 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-01 16:59:15,961 - src.modules.application - INFO - Authorization access to new domain: swiftaitechnical.amocrm.ru
+2024-08-01 16:59:16,339 - src.modules.application - INFO - Event webhook installed to domain: swiftaitechnical.amocrm.ru
+2024-08-02 12:33:24,940 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-08-02 12:33:26,765 - __main__ - INFO - Starting server...
+2024-08-02 12:33:27,266 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
