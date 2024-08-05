@@ -58,7 +58,7 @@ async def verify_token(authorization: str = Header(...)):
     return authorization
 
 
-@app.get('/service/install')
+@app.get('/service/install')  # УСТАНОВКА ПРИЛОЖЕНИЯ
 async def handle_client_authorization_data(
     request: Request
 ):
@@ -70,7 +70,7 @@ async def handle_client_authorization_data(
         return {'status': 'OK'}
 
 
-@app.get('/service/delete')
+@app.get('/service/delete')  # ДЕИНСТАЛЛЯЦИЯ ПРИЛОЖЕНИЯ (УДАЛЕНИЕ ВЕБХУКА ИВЕНТА)
 async def handle_client_deletion_data(
     request: Request
 ):
@@ -82,7 +82,16 @@ async def handle_client_deletion_data(
         return {'status': 'OK'}
 
 
-@app.post('/service/call_data', response_model=models.CallDataModel)
+@app.post('/service/event')
+async def handle_record_request_test(
+    request: Request
+):
+    form_data = await request.form()
+
+    print(form_data)
+
+
+@app.post('/service/call_data', response_model=models.CallDataModel)  # ЗАМЕНА /SERVICE/EVENT (НЕ ИСПОЛЬЗУЕТСЯ)
 async def handle_call_data(
     data: models.CallDataModel,
     token: str = Depends(verify_token)
@@ -98,7 +107,7 @@ async def handle_call_data(
         raise HTTPException(status_code=500, detail='Error, while receiving call data')
 
 
-@app.post('/service/client_register', response_model=models.ClientRegisterModel)
+@app.post('/service/client_register', response_model=models.ClientRegisterModel)  # ПЕРЕДАЧА НАСТРОЕК КЛИЕНТА
 async def handle_client_registration_data(
     data: models.ClientRegisterModel,
     token: str = Depends(verify_token)
@@ -114,7 +123,7 @@ async def handle_client_registration_data(
         raise HTTPException(status_code=500, detail='Error, while client registration')
 
 
-@app.post('/amocrm')
+@app.post('/amocrm')  # ПРИЁМ ОДИНОЧНЫХ ЗВОНКОВ ОТ ТРАНСКРИБАТОРА
 async def handle_record_request(
     data: models.ProcessedCallDataModel,
     token: str = Depends(verify_token)
@@ -130,7 +139,7 @@ async def handle_record_request(
         raise HTTPException(status_code=500, detail='Error, while processing record data')
 
 
-@app.post('/group/amocrm')
+@app.post('/group/amocrm')  # ПРИЁМ ГРУППОВЫХ ЗВОНКОВ ОТ ТРАНСКРИБАТОРА
 async def handle_group_record_request(
     data: models.ProcessedGroupCallDataModel,
     token: str = Depends(verify_token)
@@ -144,17 +153,6 @@ async def handle_group_record_request(
         logger.error(f'Error while processing group record data:\n{exception}', exc_info=True)
 
         raise HTTPException(status_code=500, detail='Error, while processing group record data')
-
-
-###############
-@app.post('/service/event')
-async def handle_record_request_test(
-    request: Request
-):
-    form_data = await request.form()
-
-    print(form_data)
-##############
 
 
 if __name__ == '__main__':
