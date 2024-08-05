@@ -1,4 +1,6 @@
 import logging
+import functools
+
 
 from src.config import cfg
 from src.modules import routes, db, db_methods
@@ -6,24 +8,26 @@ from src.modules import routes, db, db_methods
 logger = logging.getLogger(__name__)
 
 
-async def get_account_id(access_token, domain):
-    response = await routes.send_request(
-        method='get',
-        url=f'https://{domain}',
-        endpoint=cfg.ACCOUNT_ENDPOINT,
-        headers={
-            'Authorization': f'Bearer {access_token}',
-            'Content-Type': 'application/json'
-        },
-        params={
-            'with': 'id'
-        }
-    )
+def retry_on_token_expired(func):
+    @functools.wraps(func)
+    async def wrapper(**kwargs):
+        result = await func(**kwargs)
 
-    return str(response.get('id'))
+        if result == 'Token':
+            logger.info('Token updating...')
+
+            domain = kwargs.get('domain')
+
+            kwargs['access_token'] = await update_auth_tokens(domain)
+
+            result = await func(**kwargs)
+
+        return result
+
+    return wrapper
 
 
-async def get_tokens(code, domain):
+async def get_tokens_response(code, domain):
     return await routes.send_request(
         method='post',
         url=f'https://{domain}',
@@ -41,7 +45,8 @@ async def get_tokens(code, domain):
     )
 
 
-async def update_tokens(refresh_token, domain):
+@retry_on_token_expired
+async def update_tokens_response(refresh_token, domain):
     return await routes.send_request(
         method='post',
         url=f'https://{domain}',
@@ -59,7 +64,24 @@ async def update_tokens(refresh_token, domain):
     )
 
 
-async def create_event_webhook(access_token, domain):
+@retry_on_token_expired
+async def get_account_id_response(access_token, domain):
+    return await routes.send_request(
+        method='get',
+        url=f'https://{domain}',
+        endpoint=cfg.ACCOUNT_ENDPOINT,
+        headers={
+            'Authorization': f'Bearer {access_token}',
+            'Content-Type': 'application/json'
+        },
+        params={
+            'with': 'id'
+        }
+    )
+
+
+@retry_on_token_expired
+async def create_event_webhook_response(access_token, domain):
     return await routes.send_request(
         method='post',
         url=f'https://{domain}',
@@ -79,7 +101,8 @@ async def create_event_webhook(access_token, domain):
     )
 
 
-async def remove_event_webhook(access_token, domain):
+@retry_on_token_expired
+async def remove_event_webhook_response(access_token, domain):
     return await routes.send_request(
         method='delete',
         url=f'https://{domain}',
@@ -100,19 +123,22 @@ async def update_auth_tokens(domain):
         condition=db.AuthData.domain == domain
     )
 
-    response = await update_tokens(
+    response = await update_tokens_response(
         refresh_token=record.get('refresh_token'),
         domain=domain
     )
 
-    if response.get('access_token') and response.get('refresh_token'):
+    access_token = response.get('access_token')
+    refresh_token = response.get('refresh_token')
+
+    if access_token and refresh_token:
         await db_methods.update_record(
             table=db.AuthData,
             domain=domain,
             **{
-                'access_token': response.get('access_token'),
-                'refresh_token': response.get('refresh_token')
+                'access_token': access_token,
+                'refresh_token': refresh_token
             }
         )
 
-        return 'OK'
+        return access_token

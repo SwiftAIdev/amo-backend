@@ -24,9 +24,18 @@ async def send_request(method, url, endpoint, headers, params):
                         return await response.json()
 
                     except aiohttp.ContentTypeError:
-                        logger.warning('Answer in not in JSON format, returning "OK"')
+                        logger.info('Answer in not in JSON format, returning "OK"')
 
                         return 'OK'
+
+                    except aiohttp.ClientResponseError as exception:
+                        if exception.status == 401:
+                            logger.info('Access token is expired', exc_info=True)
+
+                            return 'Token'
+
+                        else:
+                            logger.error(f'HTTP error:\n{exception.status} - {exception.message}', exc_info=True)
 
             else:
                 logger.error(f'Invalid method "{method}"', exc_info=True)

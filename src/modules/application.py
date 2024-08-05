@@ -11,7 +11,7 @@ async def handle_client_authorization(data):
     code = data.get('code')
     domain = data.get('referer')
 
-    auth_response = await auth.get_tokens(
+    auth_response = await auth.get_tokens_response(
         code=code,
         domain=domain
     )
@@ -38,10 +38,12 @@ async def handle_client_authorization(data):
             logger.info(f'Authorization success to new domain: {domain}')
 
         else:
-            account_id = await auth.get_account_id(
+            response = await auth.get_account_id_response(
                 domain=domain,
                 access_token=access_token
             )
+
+            account_id = str(response.get('id'))
 
             if account_id:
                 await db_methods.insert_record(
@@ -59,7 +61,7 @@ async def handle_client_authorization(data):
             else:
                 logger.error(f'Authorization failure to domain: {domain}\nError while getting account_id')
 
-        event_response = await auth.create_event_webhook(
+        event_response = await auth.create_event_webhook_response(
             access_token=access_token,
             domain=domain
         )
@@ -86,7 +88,7 @@ async def handle_client_deletion(data):
         access_token = record.get('access_token')
         domain = record.get('domain')
 
-        event_response = await auth.remove_event_webhook(
+        event_response = await auth.remove_event_webhook_response(
             access_token=access_token,
             domain=domain
         )
