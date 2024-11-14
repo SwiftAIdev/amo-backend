@@ -81,6 +81,10 @@ async def handle_client_authorization_request(
         request: Request
 ):
     query_params = request.query_params
+    logger.info({
+            "message": "Установка приложения",
+            "query_params": query_params.__str__(),
+        })
     try:
         status = await application.handle_client_authorization(data=query_params)
         if status == 'OK':
