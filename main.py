@@ -56,6 +56,7 @@ async def lifespan(app: FastAPI):
 
 scheduler = AsyncIOScheduler()
 app = FastAPI(lifespan=lifespan, title="SwiftAI - Amo Service", root_path="/amo_service/api")
+app.logger = logger
 app.add_middleware(LoggingMiddleware, logger=logger)
 app.add_middleware(
     CORSMiddleware,
@@ -64,8 +65,6 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-
 @app.middleware("http")
 async def add_request_id_to_logs(request: Request, call_next):
     request_id = request.headers.get('X-Request-ID', str(uuid.uuid4()))
