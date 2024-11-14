@@ -3,7 +3,7 @@ import logging
 from src.config import cfg
 from src.modules import routes, decorators
 
-logger = logging.getLogger(__name__)
+
 
 
 async def get_tokens_response(code, domain):

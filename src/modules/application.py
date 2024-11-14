@@ -1,9 +1,10 @@
 import logging
 
 from src.config import models
+from src.config.logger import logger
 from src.modules import requests, db, db_methods, parsers
 
-logger = logging.getLogger(__name__)
+
 
 
 async def update_auth_tokens(domain):

@@ -1,9 +1,10 @@
 import json
 import logging
 
+from src.config.logger import logger
 from src.modules import requests, db, db_methods
 
-logger = logging.getLogger(__name__)
+
 
 
 async def parse_event_data(data_dict):

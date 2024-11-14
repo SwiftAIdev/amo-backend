@@ -11,11 +11,11 @@ from starlette.middleware.cors import CORSMiddleware
 from src.config import cfg
 from src.config import models
 from src.config.cfg import FASTAPI_HOST, FASTAPI_PORT
-from src.config.logger import get_logger
+from src.config.logger import get_logger, logger
 from src.modules import application, db
 from src.utils.logger import LoggingMiddleware, log_context
 
-logger = get_logger()
+
 
 
 async def verify_token(authorization: str = Header(...)):
@@ -57,6 +57,7 @@ async def lifespan(app: FastAPI):
 scheduler = AsyncIOScheduler()
 app = FastAPI(lifespan=lifespan, title="SwiftAI - Amo Service", root_path="/amo_service/api")
 app.logger = logger
+app.add_middleware(LoggingMiddleware, logger=logger)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],

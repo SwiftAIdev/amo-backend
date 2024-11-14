@@ -1,9 +1,10 @@
 import logging
 import functools
 
+from src.config.logger import logger
 from src.modules import application
 
-logger = logging.getLogger(__name__)
+
 
 
 def retry_on_token_expired(func):
