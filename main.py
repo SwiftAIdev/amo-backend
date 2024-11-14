@@ -1,22 +1,28 @@
-import logging
-
+import uuid
+from contextlib import asynccontextmanager
 from datetime import datetime
-from typing import List
 
 import uvicorn
-
-from fastapi import FastAPI, Header, Depends, Request, HTTPException, Response
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
-from contextlib import asynccontextmanager
+from fastapi import FastAPI, Header, Depends, Request, HTTPException, Response
+from starlette.middleware.cors import CORSMiddleware
 
 from src.config import cfg
 from src.config import models
+from src.config.cfg import FASTAPI_HOST, FASTAPI_PORT
+from src.config.logger import get_logger
 from src.modules import application, db
-from src.config.logger import setup_logging
+from src.utils.logger import LoggingMiddleware, log_context
 
-setup_logging()
-logger = logging.getLogger(__name__)
+logger = get_logger()
+
+
+async def verify_token(authorization: str = Header(...)):
+    if authorization != cfg.AUTH_TOKEN:
+        raise HTTPException(status_code=401, detail='Authentication Error')
+
+    return authorization
 
 
 @asynccontextmanager
@@ -48,20 +54,31 @@ async def lifespan(app: FastAPI):
         scheduler.shutdown()
 
 
-app = FastAPI(lifespan=lifespan, docs_url=None, redoc_url=None)
 scheduler = AsyncIOScheduler()
+app = FastAPI(lifespan=lifespan, title="SwiftAI - Amo Service", root_path="/amo_service/api")
+app.add_middleware(LoggingMiddleware, logger=logger)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
-async def verify_token(authorization: str = Header(...)):
-    if authorization != cfg.AUTH_TOKEN:
-        raise HTTPException(status_code=401, detail='Authentication Error')
-
-    return authorization
+@app.middleware("http")
+async def add_request_id_to_logs(request: Request, call_next):
+    request_id = request.headers.get('X-Request-ID', str(uuid.uuid4()))
+    request.state.request_id = request_id
+    with log_context({"x_request_id": request_id}):
+        response = await call_next(request)
+        response.headers['X-Request-ID'] = request_id
+        return response
 
 
 @app.get('/service/install')
 async def handle_client_authorization_request(
-    request: Request
+        request: Request
 ):
     query_params = request.query_params
 
@@ -73,7 +90,7 @@ async def handle_client_authorization_request(
 
 @app.get('/service/delete')
 async def handle_client_deletion_request(
-    request: Request
+        request: Request
 ):
     query_params = request.query_params
 
@@ -85,7 +102,7 @@ async def handle_client_deletion_request(
 
 @app.post('/service/event')
 async def handle_event_notification_request(
-    request: Request
+        request: Request
 ):
     form_data = await request.form()
 
@@ -107,8 +124,8 @@ async def preflight_handler(request: Request):
 
 @app.get('/service/client_register', response_model=models.ClientRegisterModel)
 async def handle_sending_client_registration_settings_request(
-    account_id: int,
-    token: str = Depends(verify_token)
+        account_id: int,
+        token: str = Depends(verify_token)
 ):
     data = await application.handle_sending_client_registration_settings(account_id=account_id)
 
@@ -120,8 +137,8 @@ async def handle_sending_client_registration_settings_request(
 
 @app.post('/service/client_register', response_model=models.ClientRegisterModel)
 async def handle_client_registration_settings_request(
-    data: models.ClientRegisterModel,
-    token: str = Depends(verify_token)
+        data: models.ClientRegisterModel,
+        token: str = Depends(verify_token)
 ):
     try:
         await application.handle_client_registration_settings(data)
@@ -169,4 +186,4 @@ async def handle_client_registration_settings_request(
 if __name__ == '__main__':
     logger.info('Starting server...')
 
-    uvicorn.run(app, host=cfg.FASTAPI_HOST, port=cfg.FASTAPI_PORT)
+    uvicorn.run(app="main:app", host=FASTAPI_HOST, port=FASTAPI_PORT, workers=1, use_colors=True)

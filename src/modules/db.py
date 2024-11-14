@@ -1,12 +1,9 @@
-from sqlalchemy.ext.declarative import declarative_base
+from databases import Database
 from sqlalchemy import create_engine, Column, Integer, String, MetaData, DateTime, func
 from sqlalchemy.dialects.postgresql import JSONB
-from databases import Database
+from sqlalchemy.ext.declarative import declarative_base
 
-from src.config import cfg
-
-
-DATABASE_URL = f"postgresql+asyncpg://{cfg.DB_CONFIG.get('user')}:{cfg.DB_CONFIG.get('password')}@{cfg.DB_CONFIG.get('host')}/{cfg.DB_CONFIG.get('database')}"
+from src.config.cfg import DATABASE_URL
 
 database = Database(DATABASE_URL)
 metadata = MetaData()
@@ -78,5 +75,6 @@ class ClientRegister(Base):
 async def get_db():
     async with database.transaction():
         yield database
+
 
 engine = create_engine(DATABASE_URL.replace('+asyncpg', ''))
