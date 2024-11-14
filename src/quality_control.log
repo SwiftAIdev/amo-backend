@@ -21,3 +21,938 @@
 2024-08-02 12:33:24,940 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
 2024-08-02 12:33:26,765 - __main__ - INFO - Starting server...
 2024-08-02 12:33:27,266 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 16:51:15,355 - __main__ - INFO - Starting server...
+2024-10-31 16:51:15,685 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 16:52:22,452 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 16:52:23,366 - __main__ - INFO - Starting server...
+2024-10-31 16:52:23,700 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 16:58:24,791 - src.modules.routes - ERROR - HTTP error:
+400 - Bad Request
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\routes.py", line 22, in send_request
+    response.raise_for_status()
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 1157, in raise_for_status
+    raise ClientResponseError(
+aiohttp.client_exceptions.ClientResponseError: 400, message='Bad Request', url='https://pak.amocrm.ru/oauth2/access_token'
+2024-10-31 17:07:11,920 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 17:07:12,840 - __main__ - INFO - Starting server...
+2024-10-31 17:07:13,197 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 17:07:25,177 - src.modules.routes - ERROR - HTTP error:
+400 - Bad Request
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\routes.py", line 24, in send_request
+    response.raise_for_status()
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 1157, in raise_for_status
+    raise ClientResponseError(
+aiohttp.client_exceptions.ClientResponseError: 400, message='Bad Request', url='https://pak.amocrm.ru/oauth2/access_token'
+2024-10-31 17:07:49,402 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 17:07:50,370 - __main__ - INFO - Starting server...
+2024-10-31 17:07:50,676 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 17:07:59,029 - src.modules.routes - ERROR - HTTP error:
+400 - Bad Request
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\routes.py", line 24, in send_request
+    response.raise_for_status()
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\aiohttp\client_reqrep.py", line 1157, in raise_for_status
+    raise ClientResponseError(
+aiohttp.client_exceptions.ClientResponseError: 400, message='Bad Request', url='https://pak.amocrm.ru/oauth2/access_token'
+2024-10-31 17:08:48,927 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 17:08:49,874 - __main__ - INFO - Starting server...
+2024-10-31 17:08:50,188 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 17:09:01,181 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 17:09:01,463 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 17:09:01,474 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-10-31 17:09:01,475 - src.modules.application - INFO - Authorization success to new domain: pak.amocrm.ru
+2024-10-31 17:09:02,133 - src.modules.application - INFO - Event webhook installed to domain: pak.amocrm.ru
+2024-10-31 17:12:50,680 - __main__ - INFO - Starting server...
+2024-10-31 17:12:50,994 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:20:26,397 - __main__ - INFO - Starting server...
+2024-11-06 11:20:26,656 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:21:45,066 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:21:46,008 - __main__ - INFO - Starting server...
+2024-11-06 11:21:46,261 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:22:54,785 - src.modules.auth - ERROR - Failed to get tokens: {'status': 400, 'response': {'hint': 'Redirect URI is not associated with client', 'title': 'Некорректный запрос', 'type': 'https://developers.amocrm.ru/v3/errors/OAuthProblemJson', 'status': 400, 'detail': 'В запросе отсутствует ряд параметров или параметры невалидны'}}
+2024-11-06 11:22:54,785 - src.modules.application - ERROR - Authorization failure to domain: swiftaiyandexru.amocrm.ru
+{'access_token': None, 'refresh_token': None}
+2024-11-06 11:23:33,545 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:23:34,446 - __main__ - INFO - Starting server...
+2024-11-06 11:23:34,695 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:23:43,342 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:26:14,280 - __main__ - INFO - Starting server...
+2024-11-06 11:26:14,531 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:26:17,382 - src.modules.application - ERROR - Event webhook deletion failure
+Error while getting auth_data from database
+2024-11-06 11:31:58,288 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:31:59,247 - __main__ - INFO - Starting server...
+2024-11-06 11:31:59,515 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:32:18,798 - src.modules.application - ERROR - Event webhook deletion failure
+Error while getting auth_data from database
+2024-11-06 11:32:33,017 - src.modules.application - INFO - Authorization success to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 11:36:05,477 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:36:06,318 - __main__ - INFO - Starting server...
+2024-11-06 11:36:06,554 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:36:15,581 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 11:45:10,682 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:45:11,574 - __main__ - INFO - Starting server...
+2024-11-06 11:45:11,813 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:45:22,587 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 11:48:14,689 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:48:15,521 - __main__ - INFO - Starting server...
+2024-11-06 11:48:15,775 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 11:48:24,784 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 11:48:25,276 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 11:50:36,822 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 11:50:37,154 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 12:08:21,330 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 12:08:22,160 - __main__ - INFO - Starting server...
+2024-11-06 12:08:22,421 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 12:08:47,132 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 12:08:47,583 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 12:29:20,860 - src.modules.application - ERROR - Event webhook deletion failure
+Error while getting auth_data from database
+2024-11-06 12:46:30,003 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 12:46:30,868 - __main__ - INFO - Starting server...
+2024-11-06 12:46:31,121 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 12:48:46,224 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 12:48:47,129 - __main__ - INFO - Starting server...
+2024-11-06 12:48:47,416 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 12:58:02,335 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 12:58:03,220 - __main__ - INFO - Starting server...
+2024-11-06 12:58:03,467 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 12:58:46,330 - src.modules.application - ERROR - Authorization failure to domain: swiftaiyandexru.amocrm.ru
+{'status': 200, 'response': {'token_type': 'Bearer', 'expires_in': 86400, 'access_token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6IjViOTA2MjY4NTlkZDliZmJkMzVmMzBmMzQyNmZiODNkZmY0ZjBkYjc2NTMyODNiZjA3ZmMxNGNjMGFkMDE1YzkxM2Q2YTRjOWVmNmU5ZjAxIn0.eyJhdWQiOiI5Mzg3MTgzNi1lNWFlLTQwY2EtYmRjYS1kYmIzZGE1Njg5YzAiLCJqdGkiOiI1YjkwNjI2ODU5ZGQ5YmZiZDM1ZjMwZjM0MjZmYjgzZGZmNGYwZGI3NjUzMjgzYmYwN2ZjMTRjYzBhZDAxNWM5MTNkNmE0YzllZjZlOWYwMSIsImlhdCI6MTczMDg4NzEyNSwibmJmIjoxNzMwODg3MTI1LCJleHAiOjE3MzA5NzM1MjUsInN1YiI6IjExNzI0NzkwIiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMyMDQzMjM0LCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJwdXNoX25vdGlmaWNhdGlvbnMiLCJmaWxlcyIsImNybSIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiYTQzMzBiMjAtODQ1Zi00ZTI1LTk0N2EtZmQxMDZmZmJiNGJlIiwiYXBpX2RvbWFpbiI6ImFwaS1iLmFtb2NybS5ydSJ9.AtAlKVv8zXldE5Am9iGeus6SPxfBv49nVMR1-RQphe_FZUfKaOO3vpke8NqcOLFeClK1OigVN7Cnpt_gDVBFx8YvZdpgqKUj9CCLMLh_PADUEpERo9hTXz03POH5ev2pyXphJkZJkfKqV3Chw0nLzVd8ADMA6bBMqk2MWVk-CkbtNFS_iJbctzegyhWHE4t-qVFwouxXGlFMVs9zpPrZb1w0-pDruuFmKHpGeRMmbaCp_Mm6dKVVaIhnA79qdb54kB8_2D8fI1Xjy6OVO6MUTqSFTWbMjMmPRbdS12H9bn56qGKmgcoXB3bMWD0_jRvayWRzyaOj60plTfUOdVVyQg', 'refresh_token': 'def50200daf30dc3de2f58aae391f4df7be8992337fd229eca78b54d944aa5fea4eaddcf7061901dafade3fd814e0f4a611a7c7f019874ad803d69520a45f6d09ce2a367c79d1be1ba096063f01311b4a16a9f257d285cfa3fcc342c1634ea4794726f02034007acda75c13bd118270a3f3ac19fa6ff8a4d940cdfa8300a9b154b915876e25c81c85d07e136751714c964806a3ded121b95c4df7482c6a05e209f073406815f5ea928ddabadeaa16281f9bebe519ca3489d734291972219b6dfad9bef15e01177750a47a851b068e7dfe05c025d90cc38748ba18c84db11536b2537643d91f4f8d2803aa580e44bba6641d8b070d2278ac90982dfa74fef72a537a00ded12454d44b06e30ddebbda706f410e4ed3c6de19e0b70452381147f4556fce5d6071ed68ae7f8da24263ebdc1a64e0e4eab396d3693fafaf314b01bab695b6ee1d390ec4a40123e67db8d30ae7341c2b3ebdcfff781fb5c3ae50d91ed7612b683d3d259f2272bf1cc1b4d6f84f864ea6dde919a616d85f8b02b5fa5aec69765bc9b8c28c9cc0a5bf92ba07fd8400b64835d96301da99f028e3f7a318ddad60a8b74334d10d64318262237c78ce56fd1cbacb46a4e98712ff55006794e4cde7ad836b02a5622bf4ba386512d96240e94b48e2bdef79c8460412eb0017a14ee18b6a971c8ce9d2b4889875a'}}
+2024-11-06 13:00:51,496 - src.modules.application - ERROR - Authorization failure to domain: swiftaiyandexru.amocrm.ru
+{'status': 200, 'response': {'token_type': 'Bearer', 'expires_in': 86400, 'access_token': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImY3Y2M2ZGU3Y2Y2YjRiNWZhZGQxZjI5MTQ0MzgyZGFjMmJlYjYzMjQ2ZDFkNGMzYTEyYzEyZjQxZGEwMzllYzhlYjRlOWY3NWVjYmE5NmE0In0.eyJhdWQiOiI5Mzg3MTgzNi1lNWFlLTQwY2EtYmRjYS1kYmIzZGE1Njg5YzAiLCJqdGkiOiJmN2NjNmRlN2NmNmI0YjVmYWRkMWYyOTE0NDM4MmRhYzJiZWI2MzI0NmQxZDRjM2ExMmMxMmY0MWRhMDM5ZWM4ZWI0ZTlmNzVlY2JhOTZhNCIsImlhdCI6MTczMDg4NzI1MSwibmJmIjoxNzMwODg3MjUxLCJleHAiOjE3MzA5NzM2NTEsInN1YiI6IjExNzI0NzkwIiwiZ3JhbnRfdHlwZSI6IiIsImFjY291bnRfaWQiOjMyMDQzMjM0LCJiYXNlX2RvbWFpbiI6ImFtb2NybS5ydSIsInZlcnNpb24iOjIsInNjb3BlcyI6WyJwdXNoX25vdGlmaWNhdGlvbnMiLCJmaWxlcyIsImNybSIsImZpbGVzX2RlbGV0ZSIsIm5vdGlmaWNhdGlvbnMiXSwiaGFzaF91dWlkIjoiODA3MjI3NDctNTMwNS00ZGJmLWI3OWItNDY4MjZmMGY0NTgxIiwiYXBpX2RvbWFpbiI6ImFwaS1iLmFtb2NybS5ydSJ9.WCptA-xMEgBv1ESOSs3CwWLwsbUB7gvX1HiYRm-hsxwpWO5Mx3M2SPICvGfjKHG9NH3QZdGZc-NltYtAaOBgE_eaLP1WKcq0-GyPoD7rCxrF_GRNphI3eIEaPYtGO7zRjSeZhC2ueNHG-IhicycFx9C4khRur3tdE2W04r3eByxdXiio7thPQJVW3x89vSqOaMSgvIULYie1z_VvCoLUsR6yXuXhcLyW7re7skBYf9kwpVe62c-IwncQMqLG1ohd2ZtBqNAyEQM4d2k7uqVay2W8bW3yFLsyIr9z82CKYDvDv5JLRzBFXpNAlf92xcXXwABsLw9TLRUzLJuxh0oQ1w', 'refresh_token': 'def5020038a345c155f1872de96587f5cc424fa8bdc8b0db20a1b6d410e6bff4da11585afb671814541a03d8cf8143f676f33517a951fe9d17d5adb4c3fed4109b17adac069912e94a4418d3f454bdb148ae495a2c439c9f2d838da27cadf77b398d87dc96d410f79350fa1d88b60340db71e78fefc6e3366ecccd360a17190838fc3a56b64b014ec025e2b19784db2d81aa28429d88f880d0921e79acb9aa56f99f03822f23bf7e0f6beaeabcb9f26dfff04c1b11d54c2553e2317a232428479d5250c38846a870cfa57997a229f1da082910f163ba0de9a75cc1c9c5d08ad4c1d4bf8a5b4473f5f92a9391c1e989d75b9b48a12b2424e8ba7f9a8794a0b58572158be14418f2c4d4b5f698909e39f39c2f7e5a2e6273c606ee06126e3bc1391ec5df33873f99971e479786414e647e0de22bb4f7a2f69d6985588e11db19be68829d9eebef8554b46f437f8819f329d688089893d513cf709d7bc9ff9893079cc8de6c1efe6ef02c3d2c34e7926d38c828b55eaf5e0db84d18a963d79ec849e68df73fef12f19f1fb686e5bb359ab5c6defde158b4d820f6d4824e8d3460ac68c1eb324aa888e117bd5dda1a0eeb5734399ffbcd3e41424109a171d22212258a82c6f97810a9f26e1451bf3ed1ddb4c6f617f6aa2206f01b4f22426768284a3ceac1d4575fb070ff705cde1a78'}}
+2024-11-06 13:22:14,332 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:22:15,231 - __main__ - INFO - Starting server...
+2024-11-06 13:22:15,487 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:22:26,085 - src.modules.application - ERROR - Authorization failure to domain: swiftaiyandexru.amocrm.ru
+Error while getting account_id
+2024-11-06 13:22:26,592 - src.modules.application - ERROR - Event webhook installation failure
+{'status': 201, 'response': {'id': 39072074, 'destination': 'https://c70e-95-26-152-148.ngrok-free.app/service/event', 'created_at': 1730888546, 'updated_at': 1730888546, 'account_id': 32043234, 'created_by': 11724790, 'sort': 1, 'disabled': False, 'settings': {'note_lead': 1, 'note_contact': 1, 'note_company': 1}}}
+2024-11-06 13:30:53,915 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:30:54,868 - __main__ - INFO - Starting server...
+2024-11-06 13:30:55,115 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:30:58,634 - src.modules.application - ERROR - Event webhook deletion failure
+Error while getting auth_data from database
+2024-11-06 13:32:42,271 - src.modules.application - ERROR - Event webhook deletion failure
+Error while getting auth_data from database
+2024-11-06 13:32:58,214 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:32:59,155 - __main__ - INFO - Starting server...
+2024-11-06 13:32:59,420 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:33:00,153 - src.modules.application - ERROR - Event webhook deletion failure
+Error while getting auth_data from database
+2024-11-06 13:34:16,794 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:34:17,711 - __main__ - INFO - Starting server...
+2024-11-06 13:34:17,966 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:34:38,939 - src.modules.application - INFO - Authorization success to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 13:34:39,795 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 13:38:51,968 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:38:52,845 - __main__ - INFO - Starting server...
+2024-11-06 13:38:53,115 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 13:39:17,243 - src.modules.application - INFO - Authorization success to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 13:39:17,966 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 13:40:50,596 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-06 14:03:02,381 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:03:03,275 - __main__ - INFO - Starting server...
+2024-11-06 14:03:03,528 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:03:10,657 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:03:11,304 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:03:22,022 - src.modules.decorators - INFO - Token expired, attempting to update token...
+2024-11-06 14:03:22,524 - src.modules.decorators - ERROR - Retry after token update also failed with 401 Unauthorized.
+2024-11-06 14:03:22,524 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': 'Unauthorized after token update'}
+2024-11-06 14:05:54,064 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:05:54,948 - __main__ - INFO - Starting server...
+2024-11-06 14:05:55,207 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:13:15,148 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:13:16,014 - __main__ - INFO - Starting server...
+2024-11-06 14:13:16,279 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:13:24,276 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:13:24,841 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:13:28,735 - src.modules.decorators - INFO - Token expired, attempting to update token...
+2024-11-06 14:13:29,277 - src.modules.decorators - ERROR - Retry after token update also failed with 401 Unauthorized.
+2024-11-06 14:13:29,277 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': 'Unauthorized after token update'}
+2024-11-06 14:14:04,339 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:14:05,226 - __main__ - INFO - Starting server...
+2024-11-06 14:14:05,487 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:14:07,572 - src.modules.application - ERROR - Authorization failure to domain: swiftaiyandexru.amocrm.ru
+{'status': 400, 'response': {'hint': 'Integration is not installed in this account', 'title': 'Некорректный запрос', 'type': 'https://developers.amocrm.ru/v3/errors/OAuthProblemJson', 'status': 400, 'detail': 'В запросе отсутствует ряд параметров или параметры невалидны'}}
+2024-11-06 14:14:20,796 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:14:21,209 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:14:24,683 - src.modules.decorators - INFO - Token expired, attempting to update token...
+2024-11-06 14:14:25,518 - src.modules.decorators - ERROR - Retry after token update also failed with 401 Unauthorized.
+2024-11-06 14:14:25,518 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': 'Unauthorized after token update'}
+2024-11-06 14:14:51,253 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:14:52,127 - __main__ - INFO - Starting server...
+2024-11-06 14:14:52,431 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:14:58,795 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:14:59,462 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:15:05,777 - src.modules.decorators - INFO - Token expired, attempting to update token...
+2024-11-06 14:15:06,215 - src.modules.decorators - ERROR - Retry after token update also failed with 401 Unauthorized.
+2024-11-06 14:15:06,215 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': 'Unauthorized after token update'}
+2024-11-06 14:23:58,040 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:23:58,911 - __main__ - INFO - Starting server...
+2024-11-06 14:23:59,170 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:24:05,776 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:24:06,314 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:24:10,998 - src.modules.decorators - INFO - Token expired, attempting to update token...
+2024-11-06 14:24:11,614 - src.modules.decorators - ERROR - Retry after token update also failed with 401 Unauthorized
+2024-11-06 14:24:11,614 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-06 14:31:59,601 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:32:00,531 - __main__ - INFO - Starting server...
+2024-11-06 14:32:00,777 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:32:06,622 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:32:07,529 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:32:12,742 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-06 14:32:12,742 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-06 14:44:22,464 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:44:23,313 - __main__ - INFO - Starting server...
+2024-11-06 14:44:23,558 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:44:28,840 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:44:30,031 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:44:43,245 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-06 14:44:43,245 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-06 14:45:33,094 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:45:36,815 - __main__ - INFO - Starting server...
+2024-11-06 14:45:37,202 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:49:24,444 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:49:24,965 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:49:32,037 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-06 14:49:32,037 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-06 14:49:46,865 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:49:52,893 - __main__ - INFO - Starting server...
+2024-11-06 14:49:53,145 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 14:49:57,666 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:49:58,125 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 14:50:06,136 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-06 14:50:06,136 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-06 15:08:28,153 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 15:08:28,948 - __main__ - INFO - Starting server...
+2024-11-06 15:08:29,194 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 15:08:54,146 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 15:08:54,922 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 15:09:02,325 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-06 15:09:02,325 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-06 15:09:38,727 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 15:16:50,778 - __main__ - INFO - Starting server...
+2024-11-06 15:16:51,030 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 15:16:51,033 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-06 15:16:51,071 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-06 15:16:51,071 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-06 15:16:51,071 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-06 15:16:51,071 - __main__ - INFO - Запланированные задачи:
+2024-11-06 15:16:51,071 - __main__ - INFO - ID задачи: send_call_data, Следующий запуск: 2024-11-06 15:16:51.070723+03:00
+2024-11-06 15:16:51,071 - __main__ - INFO - ID задачи: send_group_calls_data, Следующий запуск: 2024-11-07 00:00:00+03:00
+2024-11-06 15:16:51,071 - __main__ - INFO - ID задачи: send_results, Следующий запуск: 2024-11-07 06:00:00+03:00
+2024-11-06 15:16:51,072 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-06 15:16:51,072 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-06 15:16:51 MSK], next run at: 2024-11-06 15:16:51 MSK)" (scheduled at 2024-11-06 15:16:51.070723+03:00)
+2024-11-06 15:16:51,072 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-06 15:16:51 MSK], next run at: 2024-11-06 15:16:51 MSK)" executed successfully
+2024-11-06 15:17:40,231 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 15:17:40,232 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-06 15:17:41,104 - __main__ - INFO - Starting server...
+2024-11-06 15:17:41,367 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-06 15:17:41,369 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-06 15:17:41,404 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-06 15:17:41,404 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-06 15:17:41,404 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-06 15:17:41,405 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-06 15:17:41,405 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-06 15:17:41 MSK], next run at: 2024-11-06 15:17:41 MSK)" (scheduled at 2024-11-06 15:17:41.403822+03:00)
+2024-11-06 15:17:41,405 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-06 15:17:41 MSK], next run at: 2024-11-06 15:17:41 MSK)" executed successfully
+2024-11-06 15:18:11,690 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 15:18:12,386 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-06 15:23:18,232 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-06 15:23:18,232 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-06 15:24:07,912 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-06 15:24:08,375 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-07 01:15:49,013 - apscheduler.executors.default - WARNING - Run time of job "send_group_calls_data (trigger: cron[hour='0', minute='0'], next run at: 2024-11-08 00:00:00 MSK)" was missed by 1:15:49.013160
+2024-11-07 08:22:25,266 - apscheduler.executors.default - WARNING - Run time of job "send_results (trigger: cron[hour='6', minute='0'], next run at: 2024-11-08 06:00:00 MSK)" was missed by 2:22:25.266626
+2024-11-07 08:31:33,532 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-07 08:31:33,532 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-07 08:31:37,053 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-07 08:31:37,994 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-07 08:31:52,153 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-07 08:31:52,154 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-07 08:31:53,052 - __main__ - INFO - Starting server...
+2024-11-07 08:31:53,301 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-07 08:31:53,302 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-07 08:31:53,339 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-07 08:31:53,339 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-07 08:31:53,339 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-07 08:31:53,340 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-07 08:31:53,340 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-07 08:31:53 MSK], next run at: 2024-11-07 08:31:53 MSK)" (scheduled at 2024-11-07 08:31:53.338086+03:00)
+2024-11-07 08:31:53,340 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-07 08:31:53 MSK], next run at: 2024-11-07 08:31:53 MSK)" executed successfully
+2024-11-07 08:31:57,655 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-07 08:31:57,656 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-07 08:32:20,763 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-07 08:32:21,197 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-07 08:34:57,177 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-07 08:34:57,177 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-07 08:35:03,038 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-07 08:35:03,488 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-07 08:35:12,280 - src.modules.decorators - ERROR - Retry after token update also failed with error: Неверный логин или пароль
+2024-11-07 08:35:12,281 - src.modules.application - ERROR - Event webhook deletion failure
+{'status': 401, 'response': {'title': 'Unauthorized', 'type': 'https://httpstatus.es/401', 'status': 401, 'detail': 'Неверный логин или пароль'}}
+2024-11-07 08:35:47,320 - src.modules.application - INFO - Authorization success to new domain: swiftaiyandexru.amocrm.ru
+2024-11-07 08:35:47,641 - src.modules.application - INFO - Event webhook installed to domain: swiftaiyandexru.amocrm.ru
+2024-11-08 03:06:49,836 - apscheduler.executors.default - WARNING - Run time of job "send_group_calls_data (trigger: cron[hour='0', minute='0'], next run at: 2024-11-09 00:00:00 MSK)" was missed by 3:06:49.836342
+2024-11-08 08:47:59,607 - apscheduler.executors.default - WARNING - Run time of job "send_results (trigger: cron[hour='6', minute='0'], next run at: 2024-11-09 06:00:00 MSK)" was missed by 2:47:59.607940
+2024-11-09 01:28:13,699 - apscheduler.executors.default - WARNING - Run time of job "send_group_calls_data (trigger: cron[hour='0', minute='0'], next run at: 2024-11-10 00:00:00 MSK)" was missed by 1:28:13.698766
+2024-11-09 10:01:55,921 - apscheduler.executors.default - WARNING - Run time of job "send_results (trigger: cron[hour='6', minute='0'], next run at: 2024-11-10 06:00:00 MSK)" was missed by 4:01:55.921840
+2024-11-10 00:59:38,138 - apscheduler.executors.default - WARNING - Run time of job "send_group_calls_data (trigger: cron[hour='0', minute='0'], next run at: 2024-11-11 00:00:00 MSK)" was missed by 0:59:38.138363
+2024-11-10 09:56:57,102 - apscheduler.executors.default - WARNING - Run time of job "send_results (trigger: cron[hour='6', minute='0'], next run at: 2024-11-11 06:00:00 MSK)" was missed by 3:56:57.102361
+2024-11-11 01:32:01,969 - apscheduler.executors.default - WARNING - Run time of job "send_group_calls_data (trigger: cron[hour='0', minute='0'], next run at: 2024-11-12 00:00:00 MSK)" was missed by 1:32:01.968046
+2024-11-11 07:48:04,111 - apscheduler.executors.default - WARNING - Run time of job "send_results (trigger: cron[hour='6', minute='0'], next run at: 2024-11-12 06:00:00 MSK)" was missed by 1:48:04.111343
+2024-11-11 17:05:21,685 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-11 17:05:21,686 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-11 17:05:22,976 - __main__ - INFO - Starting server...
+2024-11-11 17:05:23,281 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-11 17:05:23,284 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-11 17:05:23,322 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-11 17:05:23,322 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-11 17:05:23,323 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-11 17:05:23,323 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-11 17:05:23,323 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-11 17:05:23 MSK], next run at: 2024-11-11 17:05:23 MSK)" (scheduled at 2024-11-11 17:05:23.321463+03:00)
+2024-11-11 17:05:23,323 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-11 17:05:23 MSK], next run at: 2024-11-11 17:05:23 MSK)" executed successfully
+2024-11-12 01:56:35,302 - apscheduler.executors.default - WARNING - Run time of job "send_group_calls_data (trigger: cron[hour='0', minute='0'], next run at: 2024-11-13 00:00:00 MSK)" was missed by 1:56:35.302152
+2024-11-12 08:56:39,600 - apscheduler.executors.default - WARNING - Run time of job "send_results (trigger: cron[hour='6', minute='0'], next run at: 2024-11-13 06:00:00 MSK)" was missed by 2:56:39.600680
+2024-11-12 11:34:43,256 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 11:34:43,258 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-12 11:50:54,094 - __main__ - INFO - Starting server...
+2024-11-12 11:50:54,392 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 11:50:54,393 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-12 11:50:54,552 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-12 11:50:54,552 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-12 11:50:54,552 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-12 11:50:54,554 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-12 11:50:54,554 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-12 11:50:54 MSK], next run at: 2024-11-12 11:50:54 MSK)" (scheduled at 2024-11-12 11:50:54.551986+03:00)
+2024-11-12 11:50:54,554 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-12 11:50:54 MSK], next run at: 2024-11-12 11:50:54 MSK)" executed successfully
+2024-11-12 11:52:21,451 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 11:52:21,451 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-12 11:52:22,376 - __main__ - INFO - Starting server...
+2024-11-12 11:52:22,676 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 11:52:22,676 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-12 11:52:22,755 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-12 11:52:22,755 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-12 11:52:22,755 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-12 11:52:22,755 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-12 11:52:22,755 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-12 11:52:22 MSK], next run at: 2024-11-12 11:52:22 MSK)" (scheduled at 2024-11-12 11:52:22.755020+03:00)
+2024-11-12 11:52:22,755 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-12 11:52:22 MSK], next run at: 2024-11-12 11:52:22 MSK)" executed successfully
+2024-11-12 12:36:28,886 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 12:36:28,886 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-12 12:36:29,899 - __main__ - INFO - Starting server...
+2024-11-12 12:36:30,244 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 12:36:30,245 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-12 12:36:30,284 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-12 12:36:30,284 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-12 12:36:30,284 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-12 12:36:30,285 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-12 12:36:30,285 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-12 12:36:30 MSK], next run at: 2024-11-12 12:36:30 MSK)" (scheduled at 2024-11-12 12:36:30.283747+03:00)
+2024-11-12 12:36:30,285 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-12 12:36:30 MSK], next run at: 2024-11-12 12:36:30 MSK)" executed successfully
+2024-11-12 13:36:47,085 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:36:47,086 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-12 13:36:48,062 - __main__ - INFO - Starting server...
+2024-11-12 13:36:48,396 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:36:48,398 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-12 13:36:48,448 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-12 13:36:48,448 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-12 13:36:48,449 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-12 13:36:48,449 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-12 13:36:48,449 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-12 13:36:48 MSK], next run at: 2024-11-12 13:36:48 MSK)" (scheduled at 2024-11-12 13:36:48.447567+03:00)
+2024-11-12 13:36:48,449 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-12 13:36:48 MSK], next run at: 2024-11-12 13:36:48 MSK)" executed successfully
+2024-11-12 13:40:39,469 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:40:40,277 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:45:09,164 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:45:09,165 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-12 13:45:10,117 - __main__ - INFO - Starting server...
+2024-11-12 13:45:10,446 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:45:10,447 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-12 13:45:10,506 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-12 13:45:10,507 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-12 13:45:10,507 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-12 13:45:10,507 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-12 13:45:10,507 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-12 13:45:10 MSK], next run at: 2024-11-12 13:45:10 MSK)" (scheduled at 2024-11-12 13:45:10.506937+03:00)
+2024-11-12 13:45:10,507 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-12 13:45:10 MSK], next run at: 2024-11-12 13:45:10 MSK)" executed successfully
+2024-11-12 13:48:38,821 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:48:38,823 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-12 13:48:39,767 - __main__ - INFO - Starting server...
+2024-11-12 13:48:40,097 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:48:40,098 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-12 13:48:40,137 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-12 13:48:40,137 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-12 13:48:40,138 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-12 13:48:40,138 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-12 13:48:40,138 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-12 13:48:40 MSK], next run at: 2024-11-12 13:48:40 MSK)" (scheduled at 2024-11-12 13:48:40.136137+03:00)
+2024-11-12 13:48:40,138 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-12 13:48:40 MSK], next run at: 2024-11-12 13:48:40 MSK)" executed successfully
+2024-11-12 13:49:36,789 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:49:36,789 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-12 13:49:37,697 - __main__ - INFO - Starting server...
+2024-11-12 13:49:38,018 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 13:49:38,020 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-12 13:49:38,059 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-12 13:49:38,060 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-12 13:49:38,060 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-12 13:49:38,060 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-12 13:49:38,060 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-12 13:49:38 MSK], next run at: 2024-11-12 13:49:38 MSK)" (scheduled at 2024-11-12 13:49:38.059827+03:00)
+2024-11-12 13:49:38,060 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-12 13:49:38 MSK], next run at: 2024-11-12 13:49:38 MSK)" executed successfully
+2024-11-12 14:19:35,061 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 14:19:35,063 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-12 14:19:35,985 - __main__ - INFO - Starting server...
+2024-11-12 14:19:36,315 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-12 14:19:36,317 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-12 14:19:36,356 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-12 14:19:36,356 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-12 14:19:36,357 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-12 14:19:36,357 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-12 14:19:36,357 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-12 14:19:36 MSK], next run at: 2024-11-12 14:19:36 MSK)" (scheduled at 2024-11-12 14:19:36.355045+03:00)
+2024-11-12 14:19:36,357 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-12 14:19:36 MSK], next run at: 2024-11-12 14:19:36 MSK)" executed successfully
+2024-11-12 17:58:50,017 - src.modules.decorators - ERROR - Retry after token update failed with another error: None
+NoneType: None
+2024-11-12 17:58:51,324 - src.modules.decorators - ERROR - Retry after token update failed with another error: None
+NoneType: None
+2024-11-13 01:51:29,699 - apscheduler.executors.default - WARNING - Run time of job "send_group_calls_data (trigger: cron[hour='0', minute='0'], next run at: 2024-11-14 00:00:00 MSK)" was missed by 1:51:29.698741
+2024-11-13 06:47:53,362 - apscheduler.executors.default - WARNING - Run time of job "send_results (trigger: cron[hour='6', minute='0'], next run at: 2024-11-14 06:00:00 MSK)" was missed by 0:47:53.362296
+2024-11-13 14:32:58,477 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-13 14:32:58,479 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-13 14:34:11,756 - __main__ - INFO - Starting server...
+2024-11-13 14:34:12,092 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-13 14:34:12,095 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-13 14:34:12,149 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-13 14:34:12,149 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-13 14:34:12,149 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-13 14:34:12,149 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-13 14:34:12,149 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-13 14:34:12 MSK], next run at: 2024-11-13 14:34:12 MSK)" (scheduled at 2024-11-13 14:34:12.148026+03:00)
+2024-11-13 14:34:12,150 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-13 14:34:12 MSK], next run at: 2024-11-13 14:34:12 MSK)" executed successfully
+2024-11-13 14:46:48,257 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-13 14:46:48,257 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-13 14:46:49,247 - __main__ - INFO - Starting server...
+2024-11-13 14:46:49,560 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-13 14:46:49,561 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-13 14:46:49,601 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-13 14:46:49,601 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-13 14:46:49,601 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-13 14:46:49,602 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-13 14:46:49,602 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-13 14:46:49 MSK], next run at: 2024-11-13 14:46:49 MSK)" (scheduled at 2024-11-13 14:46:49.600430+03:00)
+2024-11-13 14:46:49,602 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-13 14:46:49 MSK], next run at: 2024-11-13 14:46:49 MSK)" executed successfully
+2024-11-13 14:47:19,451 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-13 14:47:19,451 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-13 14:47:20,396 - __main__ - INFO - Starting server...
+2024-11-13 14:47:20,731 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-13 14:47:20,733 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-13 14:47:20,772 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-13 14:47:20,773 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-13 14:47:20,773 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-13 14:47:20,774 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-13 14:47:20,774 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-13 14:47:20 MSK], next run at: 2024-11-13 14:47:20 MSK)" (scheduled at 2024-11-13 14:47:20.772558+03:00)
+2024-11-13 14:47:20,774 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-13 14:47:20 MSK], next run at: 2024-11-13 14:47:20 MSK)" executed successfully
+2024-11-13 14:56:28,246 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-13 14:56:28,247 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-13 14:56:29,233 - __main__ - INFO - Starting server...
+2024-11-13 14:56:29,550 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-13 14:56:29,551 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-13 14:56:29,590 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-13 14:56:29,591 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-13 14:56:29,591 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-13 14:56:29,591 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-13 14:56:29,591 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-13 14:56:29 MSK], next run at: 2024-11-13 14:56:29 MSK)" (scheduled at 2024-11-13 14:56:29.590715+03:00)
+2024-11-13 14:56:29,591 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-13 14:56:29 MSK], next run at: 2024-11-13 14:56:29 MSK)" executed successfully
+2024-11-14 03:00:01,795 - apscheduler.executors.default - WARNING - Run time of job "send_group_calls_data (trigger: cron[hour='0', minute='0'], next run at: 2024-11-15 00:00:00 MSK)" was missed by 3:00:01.795869
+2024-11-14 08:59:30,265 - apscheduler.executors.default - WARNING - Run time of job "send_results (trigger: cron[hour='6', minute='0'], next run at: 2024-11-15 06:00:00 MSK)" was missed by 2:59:30.265394
+2024-11-14 09:29:17,778 - src.modules.decorators - ERROR - Retry after token update failed with another error: None
+NoneType: None
+2024-11-14 09:29:19,051 - src.modules.decorators - ERROR - Retry after token update failed with another error: None
+NoneType: None
+2024-11-14 09:49:20,446 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 09:49:20,446 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 09:49:21,963 - __main__ - INFO - Starting server...
+2024-11-14 09:49:22,262 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 09:49:22,264 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 09:49:22,305 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 09:49:22,305 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 09:49:22,305 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 09:49:22,305 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 09:49:22,305 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 09:49:22 MSK], next run at: 2024-11-14 09:49:22 MSK)" (scheduled at 2024-11-14 09:49:22.304151+03:00)
+2024-11-14 09:49:22,305 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 09:49:22 MSK], next run at: 2024-11-14 09:49:22 MSK)" executed successfully
+2024-11-14 09:51:00,591 - __main__ - ERROR - Error while fetching client registration settings:
+столбец settings.account_id не существует
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 104, in handle_sending_client_registration_settings_request
+    data = await application.handle_sending_client_registration_settings(account_id=account_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\application.py", line 124, in handle_sending_client_registration_settings
+    data = await db_methods.get_records(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\db_methods.py", line 31, in get_records
+    results = await db.database.fetch_all(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\core.py", line 174, in fetch_all
+    return await connection.fetch_all(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\core.py", line 290, in fetch_all
+    return await self._connection.fetch_all(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\backends\postgres.py", line 105, in fetch_all
+    rows = await self._connection.fetch(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 690, in fetch
+    return await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 2004, in _do_execute
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 432, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: столбец settings.account_id не существует
+2024-11-14 09:51:24,174 - __main__ - ERROR - Error while fetching client registration settings:
+столбец settings.account_id не существует
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 104, in handle_sending_client_registration_settings_request
+    data = await application.handle_sending_client_registration_settings(account_id=account_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\application.py", line 124, in handle_sending_client_registration_settings
+    data = await db_methods.get_records(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\db_methods.py", line 31, in get_records
+    results = await db.database.fetch_all(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\core.py", line 174, in fetch_all
+    return await connection.fetch_all(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\core.py", line 290, in fetch_all
+    return await self._connection.fetch_all(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\backends\postgres.py", line 105, in fetch_all
+    rows = await self._connection.fetch(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 690, in fetch
+    return await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 2004, in _do_execute
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 432, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: столбец settings.account_id не существует
+2024-11-14 09:52:34,956 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 09:52:34,956 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 09:52:35,930 - __main__ - INFO - Starting server...
+2024-11-14 09:52:36,255 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 09:52:36,256 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 09:52:36,293 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 09:52:36,293 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 09:52:36,294 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 09:52:36,294 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 09:52:36,294 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 09:52:36 MSK], next run at: 2024-11-14 09:52:36 MSK)" (scheduled at 2024-11-14 09:52:36.292643+03:00)
+2024-11-14 09:52:36,294 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 09:52:36 MSK], next run at: 2024-11-14 09:52:36 MSK)" executed successfully
+2024-11-14 09:52:59,831 - __main__ - ERROR - Error while fetching client registration settings:
+столбец settings.account_id не существует
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 104, in handle_sending_client_registration_settings_request
+    data = await application.handle_sending_client_registration_settings(account_id=account_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\application.py", line 124, in handle_sending_client_registration_settings
+    data = await db_methods.get_records(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\db_methods.py", line 31, in get_records
+    results = await db.database.fetch_all(query)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\core.py", line 174, in fetch_all
+    return await connection.fetch_all(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\core.py", line 290, in fetch_all
+    return await self._connection.fetch_all(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\backends\postgres.py", line 105, in fetch_all
+    rows = await self._connection.fetch(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 690, in fetch
+    return await self._execute(
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 2004, in _do_execute
+    stmt = await self._get_statement(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 432, in _get_statement
+    statement = await self._protocol.prepare(
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 165, in prepare
+asyncpg.exceptions.UndefinedColumnError: столбец settings.account_id не существует
+2024-11-14 09:54:50,238 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 09:54:50,239 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 09:54:51,160 - __main__ - INFO - Starting server...
+2024-11-14 09:54:51,484 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 09:54:51,485 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 09:54:51,537 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 09:54:51,537 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 09:54:51,538 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 09:54:51,538 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 09:54:51,538 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 09:54:51 MSK], next run at: 2024-11-14 09:54:51 MSK)" (scheduled at 2024-11-14 09:54:51.536957+03:00)
+2024-11-14 09:54:51,538 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 09:54:51 MSK], next run at: 2024-11-14 09:54:51 MSK)" executed successfully
+2024-11-14 09:57:18,166 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 107, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 09:57:26,289 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 107, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 10:01:40,464 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 107, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 10:17:59,775 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 10:17:59,775 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 10:18:00,782 - __main__ - INFO - Starting server...
+2024-11-14 10:18:01,093 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 10:18:01,094 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 10:18:01,134 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 10:18:01,134 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 10:18:01,134 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 10:18:01,134 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 10:18:01,135 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 10:18:01 MSK], next run at: 2024-11-14 10:18:01 MSK)" (scheduled at 2024-11-14 10:18:01.133509+03:00)
+2024-11-14 10:18:01,135 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 10:18:01 MSK], next run at: 2024-11-14 10:18:01 MSK)" executed successfully
+2024-11-14 10:30:20,767 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 10:30:20,767 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 10:48:43,553 - __main__ - INFO - Starting server...
+2024-11-14 10:48:44,135 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 10:48:44,146 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 10:48:44,235 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 10:48:44,235 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 10:48:44,236 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 10:48:44,236 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 10:48:44,237 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 10:48:44 MSK], next run at: 2024-11-14 10:48:44 MSK)" (scheduled at 2024-11-14 10:48:44.232701+03:00)
+2024-11-14 10:48:44,237 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 10:48:44 MSK], next run at: 2024-11-14 10:48:44 MSK)" executed successfully
+2024-11-14 10:51:14,478 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 119, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 10:51:26,189 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 119, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 10:55:57,489 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 10:55:57,489 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 10:55:59,005 - __main__ - INFO - Starting server...
+2024-11-14 10:55:59,535 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 10:55:59,538 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 10:55:59,612 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 10:55:59,614 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 10:55:59,614 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 10:55:59,614 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 10:55:59,615 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 10:55:59 MSK], next run at: 2024-11-14 10:55:59 MSK)" (scheduled at 2024-11-14 10:55:59.611843+03:00)
+2024-11-14 10:55:59,615 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 10:55:59 MSK], next run at: 2024-11-14 10:55:59 MSK)" executed successfully
+2024-11-14 10:56:43,025 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 10:56:43,025 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 10:56:44,544 - __main__ - INFO - Starting server...
+2024-11-14 10:56:45,097 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 10:56:45,098 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 10:56:45,179 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 10:56:45,180 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 10:56:45,180 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 10:56:45,180 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 10:56:45,181 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 10:56:45 MSK], next run at: 2024-11-14 10:56:45 MSK)" (scheduled at 2024-11-14 10:56:45.178532+03:00)
+2024-11-14 10:56:45,181 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 10:56:45 MSK], next run at: 2024-11-14 10:56:45 MSK)" executed successfully
+2024-11-14 11:55:43,036 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 11:55:43,037 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 11:55:44,665 - __main__ - INFO - Starting server...
+2024-11-14 11:55:44,980 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 11:55:44,981 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 11:55:45,028 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 11:55:45,029 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 11:55:45,029 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 11:55:45,029 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 11:55:45,029 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 11:55:45 MSK], next run at: 2024-11-14 11:55:45 MSK)" (scheduled at 2024-11-14 11:55:45.028199+03:00)
+2024-11-14 11:55:45,030 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 11:55:45 MSK], next run at: 2024-11-14 11:55:45 MSK)" executed successfully
+2024-11-14 15:19:26,788 - __main__ - ERROR - Error while processing client registration settings:
+'DataItemModel' object has no attribute 'users'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 133, in handle_client_registration_settings_request
+    await application.handle_client_registration_settings(data)
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\application.py", line 154, in handle_client_registration_settings
+    'user_ids': item.users,
+                ^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\pydantic\main.py", line 856, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'DataItemModel' object has no attribute 'users'
+2024-11-14 15:19:32,611 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 117, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 15:19:57,707 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 117, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 15:20:02,233 - __main__ - ERROR - Error while processing client registration settings:
+'DataItemModel' object has no attribute 'users'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 133, in handle_client_registration_settings_request
+    await application.handle_client_registration_settings(data)
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\application.py", line 154, in handle_client_registration_settings
+    'user_ids': item.users,
+                ^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\pydantic\main.py", line 856, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'DataItemModel' object has no attribute 'users'
+2024-11-14 15:20:37,552 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 117, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 15:22:24,522 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 117, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 15:33:12,056 - __main__ - ERROR - Error while processing client registration settings:
+'DataItemModel' object has no attribute 'users'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 133, in handle_client_registration_settings_request
+    await application.handle_client_registration_settings(data)
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\application.py", line 154, in handle_client_registration_settings
+    'user_ids': item.user_ids,
+                ^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\pydantic\main.py", line 856, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'DataItemModel' object has no attribute 'users'
+2024-11-14 15:33:39,735 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 117, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 15:36:54,051 - __main__ - ERROR - Error while processing client registration settings:
+'DataItemModel' object has no attribute 'users'
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 133, in handle_client_registration_settings_request
+    await application.handle_client_registration_settings(data)
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\application.py", line 154, in handle_client_registration_settings
+    'account_id': account_id,
+                ^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\pydantic\main.py", line 856, in __getattr__
+    raise AttributeError(f'{type(self).__name__!r} object has no attribute {item!r}')
+AttributeError: 'DataItemModel' object has no attribute 'users'
+2024-11-14 15:45:13,457 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 15:45:13,458 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 15:45:14,945 - __main__ - INFO - Starting server...
+2024-11-14 15:45:15,409 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 15:45:15,412 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 15:45:15,485 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 15:45:15,486 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 15:45:15,487 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 15:45:15,487 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 15:45:15,487 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 15:45:15 MSK], next run at: 2024-11-14 15:45:15 MSK)" (scheduled at 2024-11-14 15:45:15.485173+03:00)
+2024-11-14 15:45:15,488 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 15:45:15 MSK], next run at: 2024-11-14 15:45:15 MSK)" executed successfully
+2024-11-14 15:45:20,299 - __main__ - ERROR - Error while processing client registration settings:
+invalid input for query argument $8: [12345678, 87654321] (invalid array element at index 0: expected str, got int)
+Traceback (most recent call last):
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 175, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+  File "asyncpg\\protocol\\codecs/base.pyx", line 227, in asyncpg.protocol.protocol.Codec.encode
+  File "asyncpg\\protocol\\codecs/base.pyx", line 133, in asyncpg.protocol.protocol.Codec.encode_array
+  File "asyncpg\\protocol\\codecs/array.pyx", line 134, in asyncpg.protocol.protocol.array_encode
+ValueError: invalid array element at index 0: expected str, got int
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 133, in handle_client_registration_settings_request
+    await application.handle_client_registration_settings(data)
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\application.py", line 169, in handle_client_registration_settings
+    await db_methods.insert_record(db.ClientRegister, **data_dict)
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\src\modules\db_methods.py", line 11, in insert_record
+    await db.database.execute(query)
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\core.py", line 199, in execute
+    return await connection.execute(query, values)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\core.py", line 318, in execute
+    return await self._connection.execute(built_query)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\databases\backends\postgres.py", line 141, in execute
+    return await self._connection.fetchval(query_str, *args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 714, in fetchval
+    data = await self._execute(query, args, 1, timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 1864, in _execute
+    result, _ = await self.__execute(
+                ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 1961, in __execute
+    result, stmt = await self._do_execute(
+                   ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\venv\Lib\site-packages\asyncpg\connection.py", line 2024, in _do_execute
+    result = await executor(stmt, None)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "asyncpg\\protocol\\protocol.pyx", line 185, in bind_execute
+  File "asyncpg\\protocol\\prepared_stmt.pyx", line 204, in asyncpg.protocol.protocol.PreparedStatementState._encode_bind_msg
+asyncpg.exceptions.DataError: invalid input for query argument $8: [12345678, 87654321] (invalid array element at index 0: expected str, got int)
+2024-11-14 15:46:22,960 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 15:46:22,961 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 15:46:24,175 - __main__ - INFO - Starting server...
+2024-11-14 15:46:24,672 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 15:46:24,673 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 15:46:24,775 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 15:46:24,775 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 15:46:24,775 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 15:46:24,775 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 15:46:24,776 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 15:46:24 MSK], next run at: 2024-11-14 15:46:24 MSK)" (scheduled at 2024-11-14 15:46:24.773354+03:00)
+2024-11-14 15:46:24,776 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 15:46:24 MSK], next run at: 2024-11-14 15:46:24 MSK)" executed successfully
+2024-11-14 15:49:11,192 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 15:49:11,192 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 15:49:12,320 - __main__ - INFO - Starting server...
+2024-11-14 15:49:12,736 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 15:49:12,739 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 15:49:12,806 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 15:49:12,807 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 15:49:12,807 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 15:49:12,807 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 15:49:12,808 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 15:49:12 MSK], next run at: 2024-11-14 15:49:12 MSK)" (scheduled at 2024-11-14 15:49:12.805682+03:00)
+2024-11-14 15:49:12,808 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 15:49:12 MSK], next run at: 2024-11-14 15:49:12 MSK)" executed successfully
+2024-11-14 15:52:15,657 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 15:52:15,658 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 15:52:17,581 - __main__ - INFO - Starting server...
+2024-11-14 15:52:18,212 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 15:52:18,226 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 15:52:18,317 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 15:52:18,318 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 15:52:18,319 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 15:52:18,319 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 15:52:18,319 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 15:52:18 MSK], next run at: 2024-11-14 15:52:18 MSK)" (scheduled at 2024-11-14 15:52:18.316527+03:00)
+2024-11-14 15:52:18,320 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 15:52:18 MSK], next run at: 2024-11-14 15:52:18 MSK)" executed successfully
+2024-11-14 16:05:21,319 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 117, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 16:08:19,488 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:08:19,488 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 16:08:20,766 - __main__ - INFO - Starting server...
+2024-11-14 16:08:21,268 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:08:21,268 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 16:08:21,366 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 16:08:21,366 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 16:08:21,366 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 16:08:21,366 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 16:08:21,366 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 16:08:21 MSK], next run at: 2024-11-14 16:08:21 MSK)" (scheduled at 2024-11-14 16:08:21.366098+03:00)
+2024-11-14 16:08:21,366 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 16:08:21 MSK], next run at: 2024-11-14 16:08:21 MSK)" executed successfully
+2024-11-14 16:08:23,928 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 117, in handle_sending_client_registration_settings_request
+    raise HTTPException(status_code=404, detail='Client registration settings not found')
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 16:11:43,789 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 117, in handle_sending_client_registration_settings_request
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 16:12:06,353 - __main__ - ERROR - Error while fetching client registration settings:
+404: Client registration settings not found
+Traceback (most recent call last):
+  File "C:\Users\Administrator\Desktop\Quality Control\amo_backend\main.py", line 117, in handle_sending_client_registration_settings_request
+fastapi.exceptions.HTTPException: 404: Client registration settings not found
+2024-11-14 16:12:09,815 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:12:09,815 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 16:12:11,148 - __main__ - INFO - Starting server...
+2024-11-14 16:12:11,650 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:12:11,654 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 16:12:11,734 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 16:12:11,734 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 16:12:11,735 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 16:12:11,735 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 16:12:11,735 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 16:12:11 MSK], next run at: 2024-11-14 16:12:11 MSK)" (scheduled at 2024-11-14 16:12:11.733275+03:00)
+2024-11-14 16:12:11,735 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 16:12:11 MSK], next run at: 2024-11-14 16:12:11 MSK)" executed successfully
+2024-11-14 16:13:05,710 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:13:05,710 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 16:13:07,597 - __main__ - INFO - Starting server...
+2024-11-14 16:13:08,541 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:13:08,544 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 16:13:08,666 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 16:13:08,666 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 16:13:08,668 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 16:13:08,669 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 16:13:08,669 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 16:13:08 MSK], next run at: 2024-11-14 16:13:08 MSK)" (scheduled at 2024-11-14 16:13:08.664282+03:00)
+2024-11-14 16:13:08,670 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 16:13:08 MSK], next run at: 2024-11-14 16:13:08 MSK)" executed successfully
+2024-11-14 16:15:57,534 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:15:57,534 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 16:15:58,945 - __main__ - INFO - Starting server...
+2024-11-14 16:15:59,480 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:15:59,482 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 16:15:59,566 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 16:15:59,566 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 16:15:59,567 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 16:15:59,568 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 16:15:59,568 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 16:15:59 MSK], next run at: 2024-11-14 16:15:59 MSK)" (scheduled at 2024-11-14 16:15:59.564251+03:00)
+2024-11-14 16:15:59,568 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 16:15:59 MSK], next run at: 2024-11-14 16:15:59 MSK)" executed successfully
+2024-11-14 16:21:25,691 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:21:25,692 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 16:21:26,936 - __main__ - INFO - Starting server...
+2024-11-14 16:21:27,450 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:21:27,454 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 16:21:27,534 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 16:21:27,535 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 16:21:27,535 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 16:21:27,535 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 16:21:27,535 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 16:21:27 MSK], next run at: 2024-11-14 16:21:27 MSK)" (scheduled at 2024-11-14 16:21:27.533278+03:00)
+2024-11-14 16:21:27,535 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 16:21:27 MSK], next run at: 2024-11-14 16:21:27 MSK)" executed successfully
+2024-11-14 16:23:07,912 - databases - INFO - Disconnected from database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:23:07,914 - apscheduler.scheduler - INFO - Scheduler has been shut down
+2024-11-14 16:23:09,836 - __main__ - INFO - Starting server...
+2024-11-14 16:23:10,472 - databases - INFO - Connected to database postgresql+asyncpg://postgres:********@localhost/amo
+2024-11-14 16:23:10,476 - apscheduler.scheduler - INFO - Scheduler started
+2024-11-14 16:23:10,588 - apscheduler.scheduler - INFO - Added job "send_call_data" to job store "default"
+2024-11-14 16:23:10,588 - apscheduler.scheduler - INFO - Added job "send_group_calls_data" to job store "default"
+2024-11-14 16:23:10,589 - apscheduler.scheduler - INFO - Added job "send_results" to job store "default"
+2024-11-14 16:23:10,589 - apscheduler.scheduler - INFO - Removed job send_call_data
+2024-11-14 16:23:10,590 - apscheduler.executors.default - INFO - Running job "send_call_data (trigger: date[2024-11-14 16:23:10 MSK], next run at: 2024-11-14 16:23:10 MSK)" (scheduled at 2024-11-14 16:23:10.586076+03:00)
+2024-11-14 16:23:10,590 - apscheduler.executors.default - INFO - Job "send_call_data (trigger: date[2024-11-14 16:23:10 MSK], next run at: 2024-11-14 16:23:10 MSK)" executed successfully

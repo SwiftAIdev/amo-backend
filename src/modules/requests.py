@@ -1,30 +1,9 @@
 import logging
-import functools
-
 
 from src.config import cfg
-from src.modules import routes, db, db_methods
+from src.modules import routes, decorators
 
 logger = logging.getLogger(__name__)
-
-
-def retry_on_token_expired(func):
-    @functools.wraps(func)
-    async def wrapper(**kwargs):
-        result = await func(**kwargs)
-
-        if result == 'Token':
-            logger.info('Token updating...')
-
-            domain = kwargs.get('domain')
-
-            kwargs['access_token'] = await update_auth_tokens(domain)
-
-            result = await func(**kwargs)
-
-        return result
-
-    return wrapper
 
 
 async def get_tokens_response(code, domain):
@@ -45,7 +24,6 @@ async def get_tokens_response(code, domain):
     )
 
 
-@retry_on_token_expired
 async def update_tokens_response(refresh_token, domain):
     return await routes.send_request(
         method='post',
@@ -59,12 +37,12 @@ async def update_tokens_response(refresh_token, domain):
             'client_secret': cfg.CLIENT_SECRET,
             'grant_type': 'refresh_token',
             'refresh_token': refresh_token,
-            'redirect_uri': cfg.APPLICATION_URL
+            'redirect_uri': f'{cfg.APPLICATION_URL}/service/install'
         }
     )
 
 
-@retry_on_token_expired
+@decorators.retry_on_token_expired
 async def get_account_id_response(access_token, domain):
     return await routes.send_request(
         method='get',
@@ -80,7 +58,7 @@ async def get_account_id_response(access_token, domain):
     )
 
 
-@retry_on_token_expired
+@decorators.retry_on_token_expired
 async def create_event_webhook_response(access_token, domain):
     return await routes.send_request(
         method='post',
@@ -92,53 +70,34 @@ async def create_event_webhook_response(access_token, domain):
         },
         params={
             'destination': f'{cfg.APPLICATION_URL}/service/event',
-            'settings': [
-                'note_lead',
-                'note_contact',
-                'note_company'
-            ]
+            'settings': ['note_contact']
         }
     )
 
 
-@retry_on_token_expired
-async def remove_event_webhook_response(access_token, domain):
+@decorators.retry_on_token_expired
+async def get_contact_data_response(access_token, domain, contact_id):
     return await routes.send_request(
-        method='delete',
+        method='get',
         url=f'https://{domain}',
-        endpoint=cfg.WEBHOOK_ENDPOINT,
+        endpoint=f'{cfg.CONTACTS_ENDPOINT}/{contact_id}/links',
         headers={
             'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/json'
         },
-        params={
-            'destination': f'{cfg.APPLICATION_URL}/service/event'
-        }
+        params={}
     )
 
 
-async def update_auth_tokens(domain):
-    record = await db_methods.get_record(
-        table=db.AuthData,
-        condition=db.AuthData.domain == domain
+@decorators.retry_on_token_expired
+async def get_deal_data_response(access_token, domain, deal_id):
+    return await routes.send_request(
+        method='get',
+        url=f'https://{domain}',
+        endpoint=f'{cfg.LEADS_ENDPOINT}/{deal_id}',
+        headers={
+            'Authorization': f'Bearer {access_token}',
+            'Content-Type': 'application/json'
+        },
+        params={}
     )
-
-    response = await update_tokens_response(
-        refresh_token=record.get('refresh_token'),
-        domain=domain
-    )
-
-    access_token = response.get('access_token')
-    refresh_token = response.get('refresh_token')
-
-    if access_token and refresh_token:
-        await db_methods.update_record(
-            table=db.AuthData,
-            domain=domain,
-            **{
-                'access_token': access_token,
-                'refresh_token': refresh_token
-            }
-        )
-
-        return access_token

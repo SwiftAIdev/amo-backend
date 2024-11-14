@@ -1,23 +1,49 @@
 import logging
 
-from sqlalchemy import update
-from src.modules import auth, db, db_methods
 from src.config import models
+from src.modules import requests, db, db_methods, parsers
 
 logger = logging.getLogger(__name__)
+
+
+async def update_auth_tokens(domain):
+    record = await db_methods.get_record(
+        table=db.AuthData,
+        condition=db.AuthData.domain == domain
+    )
+
+    response = await requests.update_tokens_response(
+        refresh_token=record.get('refresh_token'),
+        domain=domain
+    )
+
+    access_token = response.get('response').get('access_token')
+    refresh_token = response.get('response').get('refresh_token')
+
+    if access_token and refresh_token:
+        await db_methods.update_record(
+            table=db.AuthData,
+            condition=db.AuthData.domain == domain,
+            **{
+                'access_token': access_token,
+                'refresh_token': refresh_token
+            }
+        )
+
+        return access_token
 
 
 async def handle_client_authorization(data):
     code = data.get('code')
     domain = data.get('referer')
 
-    auth_response = await auth.get_tokens_response(
+    response = await requests.get_tokens_response(
         code=code,
         domain=domain
     )
 
-    access_token = auth_response.get('access_token')
-    refresh_token = auth_response.get('refresh_token')
+    access_token = response.get('response').get('access_token')
+    refresh_token = response.get('response').get('refresh_token')
 
     if access_token and refresh_token:
         record = await db_methods.get_record(
@@ -28,31 +54,33 @@ async def handle_client_authorization(data):
         if record:
             await db_methods.update_record(
                 table=db.AuthData,
-                domain=domain,
+                condition=db.AuthData.domain == domain,
                 **{
                     'access_token': access_token,
-                    'refresh_token': refresh_token
+                    'refresh_token': refresh_token,
+                    'status': 'Active'
                 }
             )
 
             logger.info(f'Authorization success to new domain: {domain}')
 
         else:
-            response = await auth.get_account_id_response(
+            response = await requests.get_account_id_response(
                 domain=domain,
                 access_token=access_token
             )
 
-            account_id = str(response.get('id'))
+            account_id = response.get('response').get('id')
 
             if account_id:
                 await db_methods.insert_record(
                     table=db.AuthData,
-                    domain=domain,
                     **{
+                        'domain': domain,
                         'account_id': account_id,
                         'access_token': access_token,
-                        'refresh_token': refresh_token
+                        'refresh_token': refresh_token,
+                        'status': 'Active'
                     }
                 )
 
@@ -61,12 +89,12 @@ async def handle_client_authorization(data):
             else:
                 logger.error(f'Authorization failure to domain: {domain}\nError while getting account_id')
 
-        event_response = await auth.create_event_webhook_response(
+        event_response = await requests.create_event_webhook_response(
             access_token=access_token,
             domain=domain
         )
 
-        if event_response.get('created_at'):
+        if event_response.get('status') == 201 and event_response.get('response').get('created_at'):
             logger.info(f'Event webhook installed to domain: {domain}')
 
             return 'OK'
@@ -75,73 +103,97 @@ async def handle_client_authorization(data):
             logger.error(f'Event webhook installation failure\n{event_response}')
 
     else:
-        logger.error(f'Authorization failure to domain: {domain}\n{auth_response}')
+        logger.error(f'Authorization failure to domain: {domain}\n{response}')
 
 
 async def handle_client_deletion(data):
-    record = await db_methods.get_record(
+    account_id = data.get('account_id')
+
+    await db_methods.update_record(
         table=db.AuthData,
-        condition=db.AuthData.account_id == data.get('account_id')
+        condition=db.AuthData.account_id == account_id,
+        **{
+            'status': 'Disabled'
+        }
     )
 
-    if record:
-        access_token = record.get('access_token')
-        domain = record.get('domain')
+    logger.info(f'The client with ID: {account_id} has deleted the application')
 
-        event_response = await auth.remove_event_webhook_response(
-            access_token=access_token,
-            domain=domain
+
+async def handle_sending_client_registration_settings(account_id):
+    data = await db_methods.get_records(
+        table=db.ClientRegister,
+        condition=db.ClientRegister.account_id == account_id
+    )
+
+    if not data:
+        return []
+
+    data_items = [
+        models.DataItemModel(
+            hash_id=row['hash_id'],
+            user_ids=row['user_ids'],
+            activity_statuses=row['activity_statuses'],
+            custom_questions=row.get('custom_questions', []),
+            criterion_questions=row.get('criterion_questions', []),
+            destination_user_id=row['destination_user_id'],
+            recipient_user_ids=row.get('recipient_user_ids', [])
+        )
+        for row in data
+    ]
+
+    result = models.ClientRegisterModel(
+        account_id=data[0]['account_id'],
+        data=data_items,
+        current_user_id=data[0]['current_user_id']
+    )
+
+    return result
+
+
+async def handle_client_registration_settings(data):
+    account_id = data.account_id
+    current_user_id = data.current_user_id
+
+    for item in data.data:
+        data_dict = {
+            'account_id': account_id,
+            'hash_id': item.hash_id,
+            'user_ids': item.user_ids,
+            'activity_statuses': item.activity_statuses,
+            'custom_questions': item.custom_questions,
+            'criterion_questions': item.criterion_questions,
+            'destination_user_id': item.destination_user_id,
+            'recipient_user_ids': item.recipient_user_ids,
+            'current_user_id': current_user_id
+        }
+
+        await db_methods.insert_record(db.ClientRegister, **data_dict)
+
+
+async def handle_event_notification(form_data):
+    data_dict = dict(form_data)
+
+    parsed_data = await parsers.parse_event_data(data_dict=data_dict)
+
+    if parsed_data:
+        await db_methods.insert_record(
+            table=db.CallData,
+            **{
+                **parsed_data,
+                'status': 'New'
+            }
         )
 
-        if event_response == 'OK':
-            logger.info(f'Event webhook deletion success to domain: {domain}')
-
-            return 'OK'
-
-        else:
-            logger.error(f'Event webhook deletion failure\n{event_response}')
-
-    else:
-        logger.error(f'Event webhook deletion failure\nError while getting auth_data from database')
+        return 'OK'
 
 
-async def handle_client_registration(data):
-    serialized_data = data.model_dump()
-
-    serialized_data = {key: value for key, value in serialized_data.items() if value is not None}
-
-    query = db.ClientRegister.__table__.insert().values(
-        **serialized_data
-    )
-
-    await db.database.execute(query)
+async def handle_group_record_data():
+    pass
 
 
-async def handle_call_data(data):
-    query = db.CallData.__table__.insert().values(
-        **data.model_dump(exclude='status'), status='1'
-    )
-
-    await db.database.execute(query)
-
-
-async def handle_group_record_data(data):
-    query = db.GroupCallData.__table__.insert().values(
-        **data.model_dump(exclude='status'), status='Not sent'
-    )
-
-    await db.database.execute(query)
-
-
-async def handle_record_data(data: models.ProcessedCallDataModel):
-    query = (
-        update(db.CallData)
-        .where(db.CallData.call_id == data.call_id)
-        .where(db.CallData.domain == data.domain)
-        .values(transcription=data.transcription, summary=data.summary, status='3')
-    )
-
-    await db.database.execute(query)
+async def handle_record_data():
+    pass
 
 
 async def send_call_data():
