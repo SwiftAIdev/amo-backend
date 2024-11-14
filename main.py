@@ -81,11 +81,15 @@ async def handle_client_authorization_request(
         request: Request
 ):
     query_params = request.query_params
-
-    status = await application.handle_client_authorization(data=query_params)
-
-    if status == 'OK':
-        return {'status': 'OK'}
+    try:
+        status = await application.handle_client_authorization(data=query_params)
+        if status == 'OK':
+            return {'status': 'OK'}
+    except Exception as e:
+        logger.fatal({
+            "message": "При установке произошла ошибка",
+            "query_params": query_params.__str__(),
+        })
 
 
 @app.get('/service/delete')
