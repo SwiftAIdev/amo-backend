@@ -57,7 +57,6 @@ async def lifespan(app: FastAPI):
 scheduler = AsyncIOScheduler()
 app = FastAPI(lifespan=lifespan, title="SwiftAI - Amo Service", root_path="/amo_service/api")
 app.logger = logger
-app.add_middleware(LoggingMiddleware, logger=logger)
 app.add_middleware(
     CORSMiddleware,
     allow_origins=["*"],
@@ -192,5 +191,4 @@ async def handle_client_registration_settings_request(
 
 if __name__ == '__main__':
     logger.info('Starting server...')
-
     uvicorn.run(app="main:app", host=FASTAPI_HOST, port=FASTAPI_PORT, workers=1, use_colors=True)
