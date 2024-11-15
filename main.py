@@ -78,67 +78,74 @@ async def add_request_id_to_logs(request: Request, call_next):
 
 @app.get("/health", response_model=HealthCheckResponse, status_code=status.HTTP_200_OK)
 async def health_check():
-
     db_status = await check_database()
+
     uptime_seconds = int(time.time() - start_time)
     uptime_hours = uptime_seconds // 3600
     uptime_minutes = (uptime_seconds % 3600) // 60
     uptime = f"{uptime_hours}h {uptime_minutes}m"
 
     service_status = "ok" if db_status == "connected" else "degraded"
+
     details = {
         "database": db_status,
         "uptime": uptime
     }
-    logger.info({
-        "message":"health_check",
-        "details":details,
-    })
+
+    logger.info(
+        {
+            "message":"health_check",
+            "details":details,
+        }
+    )
+
     return HealthCheckResponse(
         status=service_status,
         details=details
     )
+
+
 @app.get('/service/install')
 async def handle_client_authorization_request(
-        request: Request
+    request: Request
 ):
     query_params = request.query_params
 
-    status = await application.handle_client_authorization(data=query_params)
+    handler_status = await application.handle_client_authorization(data=query_params)
 
-    if status == 'OK':
+    if handler_status == 'OK':
         return {'status': 'OK'}
 
 
 
 @app.get('/service/delete')
 async def handle_client_deletion_request(
-        request: Request
+    request: Request
 ):
     query_params = request.query_params
 
-    status = await application.handle_client_deletion(data=query_params)
+    handler_status = await application.handle_client_deletion(data=query_params)
 
-    if status == 'OK':
+    if handler_status == 'OK':
         return {'status': 'OK'}
 
 
 @app.post('/service/event')
 async def handle_event_notification_request(
-        request: Request
+    request: Request
 ):
     form_data = await request.form()
 
-    status = await application.handle_event_notification(form_data=form_data)
+    handler_status = await application.handle_event_notification(form_data=form_data)
 
-    if status == 'OK':
+    if handler_status == 'OK':
         return {'status': 'OK'}
 
 
 @app.get('/service/client_register', response_model=models.ClientRegisterModel)
 async def handle_sending_client_registration_settings_request(
-        account_id: int,
-        token: str = Depends(verify_token)
+    account_id: int,
+    token: str = Depends(verify_token)
 ):
     data = await application.handle_sending_client_registration_settings(account_id=account_id)
 
@@ -150,8 +157,8 @@ async def handle_sending_client_registration_settings_request(
 
 @app.post('/service/client_register', response_model=models.ClientRegisterModel)
 async def handle_client_registration_settings_request(
-        data: models.ClientRegisterModel,
-        token: str = Depends(verify_token)
+    data: models.ClientRegisterModel,
+    token: str = Depends(verify_token)
 ):
     try:
         await application.handle_client_registration_settings(data)

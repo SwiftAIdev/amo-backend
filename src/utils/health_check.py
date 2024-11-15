@@ -1,10 +1,7 @@
 from enum import Enum
-from typing import AsyncGenerator
 
 from pydantic import BaseModel
-
 from sqlalchemy import text
-from sqlalchemy.ext.asyncio import AsyncSession
 
 from src.config.logger import logger
 from src.modules import db
@@ -33,12 +30,12 @@ class HealthCheckResponse(BaseModel):
 async def check_database() -> StatusDatabase:
     try:
         await db.database.execute(text("SELECT 1"))
+
         return StatusDatabase.CONNECTED
-    except Exception:
+
+    except Exception as exception:
         logger.fatal({
-            "messages": "An error occurred while checking the connection to the database",
+            "messages": f"An error occurred while checking the connection to the database\n{exception}",
         })
+
         return StatusDatabase.DISCONNECTED
-
-
-
