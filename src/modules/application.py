@@ -1,5 +1,3 @@
-import logging
-
 from src.config import models
 from src.config.logger import logger
 from src.modules import requests, db, db_methods, parsers

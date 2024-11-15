@@ -1,9 +1,5 @@
-import logging
-
 from src.config import cfg
 from src.modules import routes, decorators
-
-
 
 
 async def get_tokens_response(code, domain):
@@ -14,7 +10,7 @@ async def get_tokens_response(code, domain):
         headers={
             'Content-Type': 'application/json'
         },
-        params={
+        json_data={
             'client_id': cfg.CLIENT_ID,
             'client_secret': cfg.CLIENT_SECRET,
             'grant_type': 'authorization_code',
@@ -32,7 +28,7 @@ async def update_tokens_response(refresh_token, domain):
         headers={
             'Content-Type': 'application/json'
         },
-        params={
+        json_data={
             'client_id': cfg.CLIENT_ID,
             'client_secret': cfg.CLIENT_SECRET,
             'grant_type': 'refresh_token',
@@ -52,7 +48,7 @@ async def get_account_id_response(access_token, domain):
             'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/json'
         },
-        params={
+        json_data={
             'with': 'id'
         }
     )
@@ -68,7 +64,7 @@ async def create_event_webhook_response(access_token, domain):
             'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/json'
         },
-        params={
+        json_data={
             'destination': f'{cfg.APPLICATION_URL}/service/event',
             'settings': ['note_contact']
         }
@@ -84,8 +80,7 @@ async def get_contact_data_response(access_token, domain, contact_id):
         headers={
             'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/json'
-        },
-        params={}
+        }
     )
 
 
@@ -98,6 +93,5 @@ async def get_deal_data_response(access_token, domain, deal_id):
         headers={
             'Authorization': f'Bearer {access_token}',
             'Content-Type': 'application/json'
-        },
-        params={}
+        }
     )

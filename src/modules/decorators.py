@@ -1,10 +1,7 @@
-import logging
 import functools
 
 from src.config.logger import logger
 from src.modules import application
-
-
 
 
 def retry_on_token_expired(func):

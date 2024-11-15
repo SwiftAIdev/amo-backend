@@ -17,7 +17,9 @@ NAME_SERVICE = config("NAME_SERVICE", default="unknown_service")
 FASTAPI_PORT = config("FASTAPI_PORT", default=8000, cast=int)
 
 config_env = AutoConfig(f"{DIR}")
+
 file_name_env = f".env.{DEPLOYMENT_STAGE.lower()}"
+
 config_env.SUPPORTED[file_name_env] = RepositoryEnv
 config_env.SUPPORTED.move_to_end(file_name_env, last=False)
 
@@ -54,5 +56,4 @@ DATABASE_PORT = config_env("DATABASE_PORT", cast=int)
 
 DATABASE_USER_DATA = f"{DATABASE_USER_NAME}:{DATABASE_USER_PASSWORD}" if len(DATABASE_USER_PASSWORD) > 0 else DATABASE_USER_NAME
 DATABASE_PORT_AND_HOST = f"{DATABASE_HOST}:{DATABASE_PORT}" if DATABASE_PORT > 0 else DATABASE_HOST
-
 DATABASE_URL = f"postgresql+asyncpg://{DATABASE_USER_DATA}@{DATABASE_PORT_AND_HOST}/{DATABASE_NAME}"
