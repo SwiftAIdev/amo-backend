@@ -16,8 +16,6 @@ from src.modules import application, db
 from src.utils.logger import LoggingMiddleware, log_context
 
 
-
-
 async def verify_token(authorization: str = Header(...)):
     if authorization != cfg.AUTH_TOKEN:
         raise HTTPException(status_code=401, detail='Authentication Error')
@@ -55,22 +53,23 @@ async def lifespan(app: FastAPI):
 
 
 scheduler = AsyncIOScheduler()
-app = FastAPI(lifespan=lifespan, title="SwiftAI - Amo Service", root_path="/amo_service/api")
+
+app = FastAPI(lifespan=lifespan, title="SwiftAI - Amo Service", root_path="/amo_service/api", docs_url=None, redoc_url=None)
+
 app.logger = logger
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
-)
+app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
+
 @app.middleware("http")
 async def add_request_id_to_logs(request: Request, call_next):
     request_id = request.headers.get('X-Request-ID', str(uuid.uuid4()))
+
     request.state.request_id = request_id
+
     with log_context({"x_request_id": request_id}):
         response = await call_next(request)
+
         response.headers['X-Request-ID'] = request_id
+
         return response
 
 
@@ -79,19 +78,12 @@ async def handle_client_authorization_request(
         request: Request
 ):
     query_params = request.query_params
-    logger.info({
-            "message": "Установка приложения",
-            "query_params": query_params.__str__(),
-        })
-    try:
-        status = await application.handle_client_authorization(data=query_params)
-        if status == 'OK':
-            return {'status': 'OK'}
-    except Exception as e:
-        logger.fatal({
-            "message": "При установке произошла ошибка",
-            "query_params": query_params.__str__(),
-        })
+
+    status = await application.handle_client_authorization(data=query_params)
+
+    if status == 'OK':
+        return {'status': 'OK'}
+
 
 
 @app.get('/service/delete')
@@ -116,16 +108,6 @@ async def handle_event_notification_request(
 
     if status == 'OK':
         return {'status': 'OK'}
-
-
-@app.options("/service/client_register")
-async def preflight_handler(request: Request):
-    response = Response()
-    response.headers["Access-Control-Allow-Origin"] = "*"
-    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
-    response.headers["Access-Control-Allow-Headers"] = "Authorization, Content-Type"
-    response.headers["Access-Control-Allow-Credentials"] = "true"
-    return response
 
 
 @app.get('/service/client_register', response_model=models.ClientRegisterModel)
@@ -191,4 +173,5 @@ async def handle_client_registration_settings_request(
 
 if __name__ == '__main__':
     logger.info('Starting server...')
+
     uvicorn.run(app="main:app", host=FASTAPI_HOST, port=FASTAPI_PORT, workers=1, use_colors=True)
