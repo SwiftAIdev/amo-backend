@@ -77,7 +77,7 @@ async def add_request_id_to_logs(request: Request, call_next):
 
 @app.get("/health", response_model=HealthCheckResponse, status_code=status.HTTP_200_OK)
 async def health_check():
-    logger.info("test")
+
     db_status = await check_database()
     uptime_seconds = int(time.time() - start_time)
     uptime_hours = uptime_seconds // 3600
@@ -89,7 +89,10 @@ async def health_check():
         "database": db_status,
         "uptime": uptime
     }
-
+    logger.info({
+        "message":"health_check",
+        "details":details,
+    })
     return HealthCheckResponse(
         status=service_status,
         details=details

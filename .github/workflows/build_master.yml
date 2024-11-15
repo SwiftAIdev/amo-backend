@@ -35,5 +35,5 @@ jobs:
           script: |
             cd ./prod/amo_service_git
             docker compose down || true
-            docker rmi ${{ secrets.DOCKER_NAMESPACE }}/amo_servicee:latest }} || true
+            docker rmi ${{ secrets.DOCKER_NAMESPACE }}/amo_service:latest }} || true
             docker compose up -d 
