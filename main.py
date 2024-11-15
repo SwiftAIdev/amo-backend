@@ -16,7 +16,7 @@ from src.config.cfg import FASTAPI_HOST, FASTAPI_PORT
 from src.config.logger import  logger
 from src.modules import application, db
 from src.utils.health_check import HealthCheckResponse, check_database
-from src.utils.logger import  log_context
+from src.utils.logger import log_context, LoggingMiddleware
 
 
 async def verify_token(authorization: str = Header(...)):
@@ -60,6 +60,7 @@ start_time = time.time()
 app = FastAPI(lifespan=lifespan, title="SwiftAI - Amo Service", root_path="/amo_service/api", docs_url=None, redoc_url=None)
 
 app.logger = logger
+app.add_middleware(LoggingMiddleware, logger=logger)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 @app.middleware("http")
