@@ -1,4 +1,4 @@
-from sqlalchemy import insert, select, update
+from sqlalchemy import insert, select, update, delete
 from src.modules import db
 
 
@@ -38,6 +38,15 @@ async def update_record(table, condition, **kwargs):
         update(table)
         .where(condition)
         .values(**kwargs)
+    )
+
+    await db.database.execute(query)
+
+
+async def delete_records(table, condition, **kwargs):
+    query = (
+        delete(table)
+        .where(condition)
     )
 
     await db.database.execute(query)

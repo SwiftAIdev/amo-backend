@@ -156,6 +156,17 @@ async def handle_client_registration_settings(data):
     account_id = data.account_id
     current_user_id = data.current_user_id
 
+    current_settings = await db_methods.get_records(
+        table=db.ClientRegister,
+        condition=db.ClientRegister.account_id == account_id
+    )
+
+    if current_settings:
+        await db_methods.delete_records(
+            table=db.ClientRegister,
+            condition=(db.ClientRegister.account_id == account_id)
+        )
+
     for item in data.data:
         data_dict = {
             'account_id': account_id,

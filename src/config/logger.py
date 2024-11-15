@@ -2,19 +2,23 @@ import datetime
 import logging
 import sys
 import uuid
+
 from pyclm.logging import Logger
+
 from src.config.cfg import DEPLOYMENT_STAGE, NAME_SERVICE, YC_GROUP_ID, YC_TOKEN
 
 
 class RequestIdFilter(logging.Filter):
     def filter(self, record):
         record.request_id = getattr(record, 'request_id', uuid.uuid4().__str__())
+
         return True
 
 
 class YandexCloudLoggingHandler(logging.Handler):
     def __init__(self):
         super().__init__()
+
         self.logger = Logger(
             log_group_id=YC_GROUP_ID,
             resource_id=NAME_SERVICE,
