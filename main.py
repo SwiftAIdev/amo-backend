@@ -1,3 +1,4 @@
+import time
 import uuid
 from contextlib import asynccontextmanager
 from datetime import datetime
@@ -6,14 +7,16 @@ import uvicorn
 from apscheduler.schedulers.asyncio import AsyncIOScheduler
 from apscheduler.triggers.cron import CronTrigger
 from fastapi import FastAPI, Header, Depends, Request, HTTPException, Response
+from starlette import status
 from starlette.middleware.cors import CORSMiddleware
 
 from src.config import cfg
 from src.config import models
 from src.config.cfg import FASTAPI_HOST, FASTAPI_PORT
-from src.config.logger import get_logger, logger
+from src.config.logger import  logger
 from src.modules import application, db
-from src.utils.logger import LoggingMiddleware, log_context
+from src.utils.health_check import HealthCheckResponse, check_database
+from src.utils.logger import log_context, LoggingMiddleware
 
 
 async def verify_token(authorization: str = Header(...)):
@@ -53,10 +56,11 @@ async def lifespan(app: FastAPI):
 
 
 scheduler = AsyncIOScheduler()
-
+start_time = time.time()
 app = FastAPI(lifespan=lifespan, title="SwiftAI - Amo Service", root_path="/amo_service/api", docs_url=None, redoc_url=None)
 
 app.logger = logger
+app.add_middleware(LoggingMiddleware, logger=logger)
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_credentials=True, allow_methods=["*"], allow_headers=["*"])
 
 @app.middleware("http")
@@ -72,7 +76,28 @@ async def add_request_id_to_logs(request: Request, call_next):
 
         return response
 
+@app.get("/health", response_model=HealthCheckResponse, status_code=status.HTTP_200_OK)
+async def health_check():
 
+    db_status = await check_database()
+    uptime_seconds = int(time.time() - start_time)
+    uptime_hours = uptime_seconds // 3600
+    uptime_minutes = (uptime_seconds % 3600) // 60
+    uptime = f"{uptime_hours}h {uptime_minutes}m"
+
+    service_status = "ok" if db_status == "connected" else "degraded"
+    details = {
+        "database": db_status,
+        "uptime": uptime
+    }
+    logger.info({
+        "message":"health_check",
+        "details":details,
+    })
+    return HealthCheckResponse(
+        status=service_status,
+        details=details
+    )
 @app.get('/service/install')
 async def handle_client_authorization_request(
         request: Request
